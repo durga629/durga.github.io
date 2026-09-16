@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Kondal Durga - Diploma Computer Engineering student, web developer and creator.">
+  <meta name="keywords" content="Kondal Durga, web developer, computer engineering, portfolio">
+  <meta name="author" content="Kondal Durga">
+  <title>Kondal Durga | Web Developer Portfolio</title>
+
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth}
+    :root{
+      --bg:#07111f;--card:#0d1b2e;--text:#f4f7fb;--muted:#a9b7ca;
+      --accent:#5eead4;--accent2:#60a5fa;--border:rgba(255,255,255,.1)
+    }
+    body{font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+    a{text-decoration:none;color:inherit}
+    .container{width:min(1100px,92%);margin:auto}
+    nav{position:fixed;top:0;width:100%;z-index:100;background:rgba(7,17,31,.86);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
+    .nav-inner{height:70px;display:flex;align-items:center;justify-content:space-between}
+    .logo{font-size:22px;font-weight:800}.logo span{color:var(--accent)}
+    .links{display:flex;gap:25px;align-items:center}.links a{color:var(--muted);font-weight:600}.links a:hover{color:var(--accent)}
+    .menu{display:none;background:none;border:0;color:white;font-size:28px}
+    section{padding:95px 0}
+    #home{min-height:100vh;display:flex;align-items:center;padding-top:120px;
+      background:radial-gradient(circle at 80% 20%,rgba(96,165,250,.18),transparent 35%),
+                 radial-gradient(circle at 15% 80%,rgba(94,234,212,.12),transparent 35%)}
+    .hero{display:grid;grid-template-columns:1.3fr .7fr;gap:50px;align-items:center}
+    .badge{display:inline-block;padding:8px 14px;border:1px solid rgba(94,234,212,.35);border-radius:30px;color:var(--accent);margin-bottom:18px;background:rgba(94,234,212,.06)}
+    h1{font-size:clamp(42px,7vw,76px);line-height:1.05;margin-bottom:20px}
+    h1 span{color:var(--accent)}
+    .hero p{font-size:19px;color:var(--muted);max-width:650px}
+    .buttons{display:flex;gap:14px;margin-top:28px;flex-wrap:wrap}
+    .btn{padding:13px 21px;border-radius:10px;font-weight:800;border:1px solid var(--border);transition:.2s}
+    .primary{background:var(--accent);color:#06201d}.secondary{background:transparent}
+    .btn:hover{transform:translateY(-2px)}
+    .avatar{width:280px;height:280px;border-radius:50%;margin:auto;display:grid;place-items:center;
+      background:linear-gradient(135deg,var(--accent2),var(--accent));color:#07111f;font-size:75px;font-weight:900;
+      box-shadow:0 0 80px rgba(94,234,212,.2)}
+    .section-title{text-align:center;font-size:38px;margin-bottom:12px}.section-sub{text-align:center;color:var(--muted);margin-bottom:45px}
+    .about-grid,.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:25px}
+    .card{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:28px}
+    .card h3{margin-bottom:12px;color:var(--accent)}
+    .card p{color:var(--muted)}
+    .skills{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+    .skill{padding:8px 13px;border-radius:8px;background:#13253d;border:1px solid var(--border);color:#dce7f5}
+    .projects{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    .project{min-height:220px;display:flex;flex-direction:column;justify-content:space-between}
+    .project-icon{font-size:40px;margin-bottom:15px}.project p{margin-bottom:18px}
+    .project-link{color:var(--accent);font-weight:800}
+    .contact-list{display:grid;gap:14px;margin-top:20px}.contact-item{padding:15px;background:#13253d;border-radius:10px}
+    .contact-item small{display:block;color:var(--muted);margin-bottom:3px}
+    form{display:grid;gap:14px}input,textarea{width:100%;padding:14px;border-radius:10px;border:1px solid var(--border);background:#081525;color:white;font:inherit}
+    textarea{min-height:130px;resize:vertical}
+    footer{border-top:1px solid var(--border);padding:25px 0;text-align:center;color:var(--muted)}
+    #top{position:fixed;right:20px;bottom:20px;border:0;border-radius:50%;width:45px;height:45px;background:var(--accent);color:#06201d;font-weight:900;cursor:pointer;display:none}
+    @media(max-width:800px){
+      .links{display:none;position:absolute;top:70px;left:0;width:100%;background:#081525;padding:20px;flex-direction:column}
+      .links.show{display:flex}.menu{display:block}
+      .hero,.about-grid,.contact-grid{grid-template-columns:1fr}.hero{text-align:center}.hero p{margin:auto}.buttons{justify-content:center}
+      .avatar{width:210px;height:210px;font-size:55px}.projects{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+
+<body>
+<nav>
+  <div class="container nav-inner">
+    <a class="logo" href="#home">KONDAL<span>DURGA</span></a>
+    <button class="menu" id="menu">☰</button>
+    <div class="links" id="links">
+      <a href="#home">Home</a><a href="#about">About</a><a href="#skills">Skills</a>
+      <a href="#projects">Projects</a><a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<section id="home">
+  <div class="container hero">
+    <div>
+      <div class="badge">👋 Welcome to my portfolio</div>
+      <h1>Hi, I'm <span>Kondal Durga</span></h1>
+      <p>Diploma Computer Engineering graduate passionate about web development, software projects and learning new technologies.</p>
+      <div class="buttons">
+        <a class="btn primary" href="#projects">View Projects</a>
+        <a class="btn secondary" href="#contact">Contact Me</a>
+      </div>
+    </div>
+    <div class="avatar">KD</div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="container">
+    <h2 class="section-title">About Me</h2>
+    <p class="section-sub">A little about my education and interests</p>
+    <div class="about-grid">
+      <div class="card">
+        <h3>🎓 Education</h3>
+        <p><strong>Diploma in Computer Engineering</strong><br>Bapatla Engineering College, Bapatla</p>
+        <p style="margin-top:12px"><strong>Diploma Percentage:</strong> 86%</p>
+        <p style="margin-top:12px"><strong>SSC:</strong> Siddhartha High School<br><strong>10th Marks:</strong> 503 / 600<br><strong>Passing Year:</strong> 2023</p>
+      </div>
+      <div class="card">
+        <h3>🚀 My Goal</h3>
+        <p>I want to build useful, modern and user-friendly software. I enjoy creating websites, experimenting with technology and improving my programming skills through real projects.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="container">
+    <h2 class="section-title">My Skills</h2>
+    <p class="section-sub">Technologies and abilities I'm developing</p>
+    <div class="card">
+      <div class="skills">
+        <span class="skill">HTML</span><span class="skill">CSS</span><span class="skill">JavaScript</span>
+        <span class="skill">Python</span><span class="skill">Web Development</span><span class="skill">Full Stack Basics</span>
+        <span class="skill">Database Basics</span><span class="skill">Problem Solving</span><span class="skill">Communication</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="container">
+    <h2 class="section-title">My Projects</h2>
+    <p class="section-sub">Some projects and ideas I have worked on</p>
+    <div class="projects">
+      <div class="card project">
+        <div><div class="project-icon">👤</div><h3>Face Recognition System</h3><p>A computer-vision project concept for detecting and recognizing faces using modern programming tools.</p></div>
+        <span class="project-link">Computer Vision →</span>
+      </div>
+      <div class="card project">
+        <div><div class="project-icon">✈️</div><h3>Travel Planner</h3><p>A travel-planning website concept that helps users explore destinations, budgets, hotels and restaurants.</p></div>
+        <span class="project-link">Web Application →</span>
+      </div>
+      <div class="card project">
+        <div><div class="project-icon">🎬</div><h3>Movie Ticket Booking</h3><p>A booking application concept with movie selection, seats and a simple user-friendly interface.</p></div>
+        <span class="project-link">Full Stack Project →</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="container">
+    <h2 class="section-title">Contact Me</h2>
+    <p class="section-sub">Have a project or opportunity? Send me a message.</p>
+    <div class="contact-grid">
+      <div class="card">
+        <h3>Let's Connect</h3>
+        <p>You can replace the details below with your real contact information before publishing.</p>
+        <div class="contact-list">
+          <div class="contact-item"><small>Email</small>your-email@example.com</div>
+          <div class="contact-item"><small>Location</small>Guntur, Andhra Pradesh, India</div>
+          <div class="contact-item"><small>LinkedIn</small>linkedin.com/in/your-profile</div>
+        </div>
+      </div>
+      <div class="card">
+        <h3>Send a Message</h3>
+        <form id="contactForm">
+          <input id="name" type="text" placeholder="Your name" required>
+          <input id="email" type="email" placeholder="Your email" required>
+          <textarea id="message" placeholder="Your message" required></textarea>
+          <button class="btn primary" type="submit">Send Message</button>
+        </form>
+        <p id="formStatus" style="margin-top:12px"></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">© <span id="year"></span> Kondal Durga. Built with HTML, CSS & JavaScript.</div>
+</footer>
+
+<button id="top" title="Back to top">↑</button>
+
+<script>
+  const menu = document.getElementById("menu");
+  const links = document.getElementById("links");
+  menu.addEventListener("click", () => links.classList.toggle("show"));
+  document.querySelectorAll(".links a").forEach(a => a.addEventListener("click", () => links.classList.remove("show")));
+
+  document.getElementById("year").textContent = new Date().getFullYear();
+
+  const topBtn = document.getElementById("top");
+  window.addEventListener("scroll", () => {
+    topBtn.style.display = window.scrollY > 400 ? "block" : "none";
+  });
+  topBtn.addEventListener("click", () => window.scrollTo({top:0, behavior:"smooth"}));
+
+  document.getElementById("contactForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+    const name = document.getElementById("name").value.trim();
+    document.getElementById("formStatus").textContent =
+      `Thanks, ${name}! This demo form works on the page, but to receive messages you need to connect it to an email/form service.`;
+    this.reset();
+  });
+</script>
+</body>
+</html>
